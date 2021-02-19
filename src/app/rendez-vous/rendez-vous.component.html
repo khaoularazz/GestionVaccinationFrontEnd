@@ -1,0 +1,107 @@
+
+
+
+<body class="hm-gradient">
+    <main>
+        <form class="pt-3" (ngSubmit) = "onvalidate()" >
+
+        <!--MDB Forms-->
+        <div class="container mt-4">
+           
+            <!-- Grid row -->
+            <div class="row">
+                <!-- Grid column -->
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="text-center default-text py-3">  Rendez Vous </h3>
+                            <!--Body-->
+
+                           <div class="md-form">
+                            <i class="fa fa-phone prefix grey-text"></i>  <label *ngIf='tel' style="color: red;"> * </label><input placeholder="votre numero de télephone" type="text" id="defaultForm-email" class="form-control" [(ngModel)] = "cl.tel" name='tel' >
+                            
+                           </div>
+                           
+                         <span>Age :</span>  <span *ngIf='age' style="color: red;"> * </span>   <input placeholder="Votre Age" type="text"  id="defaultForm-email" class="form-control" [(ngModel)] = "cl.age" name='age' >
+                       
+                           
+
+
+ <div class= "form-groupe">   
+  <label for="gender">Your Gender : </label>  <label *ngIf='sex' style="color: red;"> * </label>             
+    <select id="gender" name="gender" class = "form-control"  [(ngModel)] = "cl.sex" >
+    <option Value="female"> female </option>
+    <option Value="male"> male </option>
+    </select>
+    </div>
+    
+     
+     
+     <div class= "form-groupe">   
+  <label for="">Your City :  </label>  <label *ngIf='city' style="color: red;"> * </label>               
+    <select id="city" name="city" class = "form-control" [(value)]="tanger" [(ngModel)] = "cl.ville" >
+    <option Value="agadir"> Agadir  </option>
+    <option Value="al_hoceima"> Al Hoceïma </option>
+    <option Value="assilah"> Assilah </option>
+    <option Value="beni Mellal"> Beni Mellal </option>
+    <option Value="casablanca"> Casablanca </option>
+    <option Value="chefchaouen"> Chefchaouen </option>
+    <option Value="el_jadida"> El Jadida  </option>
+    <option Value="fes"> Fès </option>
+    <option Value="fnideq"> Fnideq </option>
+    <option Value="ifrane"> Ifrane  </option>
+    <option Value="kenitra"> Kénitra  </option>
+    <option Value="marrakech"> Marrakech </option>
+    <option Value="oujda"> Oujda  </option>
+    <option Value="rabat"> Rabat  </option>
+    <option Value="tanger"> Tanger  </option>
+    <option Value="tetouan"> Tétouan</option>
+    </select>
+    </div>
+
+   
+
+
+
+<mat-form-field>
+
+    <label for="defaultForm-email">Your Date : </label>
+  
+  <input matInput [matDatepicker] = "mypicker" [min] = "minDate" [max] = "maxDate" [(ngModel)]="daterend" name = "date">
+  <mat-datepicker-toggle  matSuffix [for] = "mypicker"  matSuffix> </mat-datepicker-toggle>
+  
+  <mat-datepicker (closed)="onSubmit()"
+  #mypicker></mat-datepicker>  
+  
+  </mat-form-field>
+
+
+<div  class= "form-groupe" *ngIf='k' >   
+    <label for="centre">Centre Vaccination : </label>                 
+      <select id="centre" name="centre" [(ngModel)] = "cl.centrenom"  class = "form-control"  >
+      <option *ngFor= 'let v of vs' [value]="v.nom"> {{v.nom}} </option>
+     
+      </select>
+      </div>
+
+
+
+
+
+                            <div class="text-center">
+                                 <button class="btn btn-indigo">Send <i class="fa fa-paper-plane-o ml-1"></i></button>
+                       
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+                </div> 
+          
+
+        </div>
+      
+    </form>  
+    </main>
+    
+</body>

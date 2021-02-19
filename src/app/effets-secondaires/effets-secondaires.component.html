@@ -1,0 +1,75 @@
+
+<section style="background-color: #ededed" class="pb-5">
+  <div class=" ee edge-header "></div>
+
+  <!-- Main Container -->
+  <div class="container free-bird">
+    <div class="row">
+      <div class="col-md-8 col-lg-7 mx-auto float-none white z-depth-1 py-2 px-2">
+
+        <!--Naked Form-->
+        <div class="card-body">
+            
+          <h2 class="h2 text-center"><strong> déclarer un événement indésirable après  la vaccination </strong></h2>
+          
+
+          <!--Body-->
+          <form (ngSubmit) = "onSubmit()">
+           <br/>
+            <h5 class="h5-responsive">Comme tous les médicaments et produits de santé, le vaccin contre le virus de la COVID 19 peut provoquer, chez certaines personnes, des évènements indésirables.</h5>
+            
+            <!-- /.Basic textbox -->
+              <br/>
+            <h6 class="h6-responsive"> <span class="fas fa-check-square  p-1"></span> Choisir Les Effets Indésirables Que Tu As : </h6>
+      <br/>     
+  <div class="card" >
+           <div>
+<mat-checkbox labelPosition="before" value = "fievre" color = "primary" (change)="onChange($event)" >  La fièvre </mat-checkbox>
+</div>
+<div>
+<mat-checkbox labelPosition="before" value = "douleur musculaire " color = "primary" (change)="onChange($event)">  douleur musculaire </mat-checkbox>
+</div>
+
+<div>
+<mat-checkbox labelPosition="before" color = "primary" value = "maux de tete" (change)="onChange($event)">  maux de tête </mat-checkbox>
+</div>
+
+<div>
+<mat-checkbox labelPosition="before" value = "douleur articulaire " color = "primary" (change)="onChange($event)" > douleur articulaire  </mat-checkbox>
+</div>
+<div>
+<mat-checkbox labelPosition="before" value = "petit malaise" color = "primary" (change)="onChange($event)" > petit malaise  </mat-checkbox>
+</div>
+
+<div>
+<mat-checkbox labelPosition="before" value = "tumefaction ou rougeur au site d'injection"  (change)="onChange($event)"> tuméfaction ou rougeur au site d'injection </mat-checkbox>
+</div>
+ </div>
+            <!--Textarea with icon-->
+         
+            <div class="md-form">
+              <mdb-icon fas icon="pencil-alt" class="prefix"></mdb-icon>
+              <textarea type="text" id="form7"  [(ngModel)]="autre" name = "autre" class="md-textarea form-control" rows="2"></textarea>
+              <label for="form7"> si vous avez d'autres événements indésirables  , vous pouvez les ajouter ici</label>
+            </div>
+
+           
+
+            <div class=" bt text-xs-left">
+              <button mdbBtn color = "primary"> Envoyer</button>
+            </div>
+          </form>
+    
+
+
+
+
+
+        </div>
+        <!--Naked Form-->
+
+      </div>
+    </div>
+  </div>
+  <!-- /.Main Container -->
+</section>

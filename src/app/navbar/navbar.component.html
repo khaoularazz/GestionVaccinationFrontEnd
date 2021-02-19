@@ -1,0 +1,57 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark unique-color" [containerInside]="false">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" routerLink="/Home" (click)="navigate()">Home</a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+   
+      <li class="nav-item">
+        <a class="nav-link waves-light" *ngIf='loggedinclient ' (click)="navigate()" routerLink="/Rendez_vous" mdbWavesEffect>Rendez-vous</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" *ngIf='loggedinadmin' (click)="navigate()" routerLink="/ValiderRendez_vous" mdbWavesEffect>Liste des Rendez-vous</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" *ngIf='loggedinclient' (click)="navigate()" routerLink="/Certificat" mdbWavesEffect>Certificat</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link waves-light" *ngIf='loggedinclient ' (click)="navigate()" routerLink="/Reclamation" mdbWavesEffect>Réclamation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" *ngIf='loggedinadmin' (click)="navigate()" routerLink="/ListReclamation" mdbWavesEffect>Liste des Réclamations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light"  routerLink="/Informations" (click)="navigate()" mdbWavesEffect>Informations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" routerLink="/Charts" (click)="navigate()" mdbWavesEffect>Charts</a>
+        </li>
+
+    </ul>
+    <!-- Links -->
+
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+     
+     
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          <mdb-icon fas icon="user"></mdb-icon>Login<span class="caret"></span></a>
+          <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" mdbWavesEffect *ngIf='!loggedin ' routerLink="/LoginAdmin" (click)="navigate()">Administrateur</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect *ngIf='!loggedin' routerLink="/LoginClient"(click)="navigate()">Client</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect *ngIf='loggedin'  routerLink="/LoginClient" (click)="logout()">Logout</a>
+        </div>
+      </li>
+    </ul>
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<img *ngIf='v' style="width: 90%; margin-left: 10%;" src="assets/min.png">
+<router-outlet></router-outlet>
+<!--/.Navbar-->

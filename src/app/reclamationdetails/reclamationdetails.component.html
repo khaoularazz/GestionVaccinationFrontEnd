@@ -1,0 +1,59 @@
+ 
+<body class="hm-gradient">
+    <main>
+    <form class="pt-3" (ngSubmit) = "onSubmit()">
+        <!--MDB Forms-->
+        <div class="container mt-4">
+            <!-- Grid row -->
+            <div class="row">
+                <!-- Grid column -->
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="h2 text-center">Le Détail De La Reclamation</div>
+                            <!--Body-->
+                                <br/>
+
+                             <div class="h7"> Les Événements indésirables signalés aprés la vacination :</div> 
+
+                              <br/>
+                              <br/>
+                              
+
+                              <div class="h2 text-center"></div>
+                          
+                             <p class ="p" *ngFor = "let d of detail">  <i class="fa fa-angle-right prefix grey-text"></i> {{d}}  </p>
+
+                              <div class="md-form">
+                                <i class="fa fa-edit prefix grey-text"></i>
+                                <input type="text"  id="defaultForm-email"  [(ngModel)] = "body"  name = "body"class="form-control"  placeholder="Traitez La Reclamation">
+                                
+                            </div>
+
+ 
+    
+     
+     
+
+
+
+
+ 
+                     
+                            <div class="text-center">
+                                 <button class="btn btn-indigo">Send <i class="fa fa-paper-plane-o ml-1"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+           
+            
+
+        </div>
+      
+          </form>
+    </main>
+    
+</body>

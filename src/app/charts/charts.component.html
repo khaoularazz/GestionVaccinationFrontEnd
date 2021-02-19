@@ -1,0 +1,55 @@
+<div class="input-group"> 
+    <div   style="width: 22% ;margin-top: 3em;margin-left: 5%;">
+          <div class="card-header" style= " text-align: center;background-color: rgb(238, 183, 34) ;  font: 600;color: rgb(252, 252, 252);border-color: rgb(221, 175, 207); font-size: 23px ; ">Nembre Total des gens complétement vaccinés
+                </div>
+              <p class="card-text" style="font-size: 30px; text-align: center;" >{{totaldose2}} </p>
+  </div>
+  <div   style="width: 20%;margin-left: 3%; ;margin-top: 3em;">
+    <div class="card-header" style= " text-align: center;background-color: rgb(73, 100, 221) ;  font: 600;color: rgb(252, 252, 252);border-color: rgb(221, 175, 207); font-size: 23px ; ">Nembre Total des gens demi-vaccinés
+          </div>
+        <p class="card-text" style="font-size: 30px; text-align: center;" >{{totaldose1}} </p>
+  </div>
+  <div style="display: block ; width: 40%; margin-top: 3%;margin-left: 2%;">
+    <canvas mdbChart
+        [chartType]="chartType2"
+        [datasets]="chartDatasets2"
+        [labels]="chartLabels2"
+        [colors]="chartColors2"
+        [options]="chartOptions2"
+        [legend]="true"
+        (chartHover)="chartHovered2($event)"
+        (chartClick)="chartClicked2($event)">
+    </canvas>
+  </div>
+  </div>
+<div class="input-group"> 
+<div style="display: block  ; width: 40%;;margin-left: 2%; ">
+    <canvas mdbChart
+        [chartType]="chartType"
+        [datasets]="chartDatasets"
+        [labels]="chartLabels"
+        [colors]="chartColors"
+        [options]="chartOptions"
+        [legend]="true"
+       
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)">
+    </canvas>
+  </div>
+
+  <div style="display: block ; width: 40%; margin-left: 12%;">
+    <canvas mdbChart
+        [chartType]="chartType1"
+        [datasets]="chartDatasets1"
+        [labels]="chartLabels1"
+        [colors]="chartColors1"
+        [options]="chartOptions1"
+        [legend]="true"
+        title="Nembre des gens Complétement vaccinés par age"
+        
+        (chartHover)="chartHovered1($event)"
+        
+        (chartClick)="chartClicked1($event)">
+    </canvas>
+  </div>
+</div>

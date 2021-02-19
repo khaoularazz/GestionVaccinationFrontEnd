@@ -1,0 +1,20 @@
+<div class="wrapper bg-white">
+    <div class="h2 text-center">  Email Validation </div>
+    <br/>
+    <div class="h4 text-muted text-center pt-2"></div>
+    <h6> Nous voulons nous assurer que c'est vous. </h6>
+    
+    <h6> Pour vérifier votre identité , saisissez le code de vérification qui a été envoyé à votre email </h6>
+    <form class="pt-3" (ngSubmit) = "onSubmit()">
+        <div class="form-group py-2">
+            <div class="input-field"> <span class="fas fa-lock p-2"></span> <input type="text" placeholder="verification code" required class="" [(ngModel)] = "cl.code_ver"  name = "code_ver" id= "code_ver"> </div>
+        </div>
+        
+        <div class="d-flex align-items-start">
+
+        </div> <button class="btn btn-block text-center my-3"> Confirm Code  </button>
+
+
+    </form>
+</div>
+<router-outlet></router-outlet>

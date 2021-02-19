@@ -1,0 +1,32 @@
+
+ <div class="h2 text-center">La Liste Des Réclamations</div>
+
+<table class="table table-striped table-responsive-md btn-table">
+
+<thead>
+  <tr>
+    <th class="t"> Numéro de Réclamation</th>
+    <th class="t"> Le Prenom du Citoyen </th>
+    <th class="t"> Le Nom du Citoyen</th>
+    <th class="t"> Consulter</th>
+  </tr>
+</thead>
+
+<tbody>
+  <tr *ngFor = "let reclamation of reclamations ;let i=index">
+    <th scope="row">{{i+1}}</th>
+
+      <td>
+     {{ reclamation.prenom}}
+    </td>
+    <td>
+       {{ reclamation.nom}}
+    </td>
+   
+    <td> <button  (click) = "consulter(reclamation.id)" type="button" class="btn btn-indigo btn-sm m-0">Consulter</button></td>
+  </tr>
+  
+  
+</tbody>
+
+</table>

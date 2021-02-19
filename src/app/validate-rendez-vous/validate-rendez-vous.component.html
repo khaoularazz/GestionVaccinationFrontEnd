@@ -1,0 +1,24 @@
+
+       
+    <div *ngFor="let cmts of rdvs; let i=index" style="border-color:rgb(46, 73, 161);" class="col-md-8 col-lg-7 mx-auto float-none white z-depth-1 py-2 px-2" style="margin-top: 3em;">
+        <div style="border-color: #0c2fc9;"  class="card-body">
+    
+            <div class="card-header" style="background-color: rgb(255, 255, 255) ;  font: 600;color: red;;border-color: rgb(46, 73, 161); font-size: 23px ; ">Rendez Vous N°:{{i+1}}
+                  </div>
+            <div class="card-header " style="background-color: rgb(255, 255, 255);border-color: rgb(46, 73, 161); border-bottom: 1cm; ">
+    
+                <p class="card-text" style="font-size: 20px;" > Nom : {{cmts.nom}}  <span style="float: right;">Prenom : {{cmts.prenom}}</span></p>
+               
+              
+                <p class="card-text" style="font-size: 20px;" >Age : {{cmts.age}} <span style="float: right;">Sex : {{cmts.sex}}</span> </p>
+                <p class="card-text" style="font-size: 20px;" > Tel : {{cmts.tel}}  </p>
+                <p *ngIf="cmts.dose===1" class="card-text" style="font-size: 20px;" > Vaccin  : Premiere Dose  </p>
+                <p *ngIf="cmts.dose===2" class="card-text" style="font-size: 20px;" > Vaccin  : Deuxiéme Dose  </p>
+               
+            </div>
+            <button mdbBtn type="button" style="background-color: rgb(46, 73, 161);color: rgb(255, 255, 255); font-size:18px ; margin-left:85% "  size="sm" (click)='validerRendez_vous(cmts.id);' class="waves-light"
+            mdbWavesEffect>valider</button>
+            
+        </div>
+    </div>
+    <hr />
